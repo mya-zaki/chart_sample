@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
+  <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+  <script src="https://www.amcharts.com/lib/3/radar.js"></script>
+  <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+  <script src="https://www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
+</head>
+<body>
+  <style>
+    #myChartWithAmcharts_wrap {
+      width: 800px;
+      height: 800px;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <div id="myChartWithAmcharts_wrap">
+    <div id="myChartWithAmcharts" style="width: 100%;height: 100%;"></div>
+  </div>
+  <script>
+    var chart = AmCharts.makeChart( "myChartWithAmcharts", {
+      "type": "radar",
+      "theme": "light",
+      "dataProvider": [ {
+        "skill": "Vocabulary",
+        "point": 65
+      }, {
+        "skill": "Reading",
+        "point": 59
+      }, {
+        "skill": "Listening",
+        "point": 30
+      }, {
+        "skill": "Writing",
+        "point": 41
+      }, {
+        "skill": "Speaking",
+        "point": 26
+      } ],
+      "valueAxes": [ {
+        "axisTitleOffset": 20,
+        "minimum": 0,
+        "axisAlpha": 0.15,
+        "inside": true
+      } ],
+      "startDuration": 2,
+      "graphs": [ {
+        "balloonText": "[[value]] points",
+        "bullet": "round",
+        "lineThickness": 2,
+        "valueField": "point"
+      } ],
+      "categoryField": "skill",
+      "responsive": {
+        "enabled": true
+      }
+    });
+  </script>
+</body>
+</html>
+
+

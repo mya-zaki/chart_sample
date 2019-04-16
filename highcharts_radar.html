@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+  <head>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  </head>
+  <body>
+    <div id="myChartWithHighcharts" style="width: 800px; margin: 0 auto"></div>
+    <script>
+      var chart = new Highcharts.Chart({
+          chart: {
+              renderTo: 'myChartWithHighcharts',
+              polar: true,
+              type: 'line'
+          },
+
+          title: {
+              text: 'My data',
+              x: -80
+          },
+
+          //pane: {
+          //    size: '100%'
+          //},
+
+          xAxis: {
+              categories: ["Vocabulary", "Reading", "Listening", "Writing", "Speaking"],
+              tickmarkPlacement: 'on',
+              lineWidth: 0
+          },
+
+          yAxis: {
+              gridLineInterpolation: 'polygon',
+              lineWidth: 0,
+              min: 0
+          },
+
+          tooltip: {
+              shared: true,
+              valueSuffix: '%'
+          },
+
+          legend: {
+              align: 'right',
+              verticalAlign: 'middle',
+              //y: 100,
+              layout: 'vertical'
+          },
+
+          series: [{
+              name: 'My First dataset',
+              data: [65, 59, 30, 41, 26],
+              pointPlacement: 'on'
+          }, {
+              name: 'My Second dataset',
+              data: [78, 88, 70, 59, 46],
+              pointPlacement: 'on'
+          }],
+
+          responsive: {
+            rules: [{
+              condition: {
+                maxWidth: 500
+              },
+              chartOptions: {
+                legend: {
+                  //enabled: false
+                  align: 'center',
+                  verticalAlign: 'bottom',
+                  layout: 'horizontal'
+                }
+              }
+            }]
+          }
+      });
+    </script>
+  </body>
+</html>
+
+

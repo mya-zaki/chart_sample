@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+  </head>
+  <body>
+    <div style="max-width:800px;">
+      <canvas id="myChartWithChartjs"></canvas>
+    </div>
+    <script>
+      var ctx = document.getElementById("myChartWithChartjs");
+
+      var data = {
+        labels: ["Vocabulary", "Reading", "Listening", "Writing", "Speaking"],
+        datasets: [
+          {
+            label: "My First dataset",
+            backgroundColor: "rgba(179,181,198,0.2)",
+            borderColor: "rgba(179,181,198,1)",
+            pointBackgroundColor: "rgba(179,181,198,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(179,181,198,1)",
+            data: [65, 59, 30, 41, 26]
+          },
+          {
+            label: "My Second dataset",
+            backgroundColor: "rgba(255,99,132,0.2)",
+            borderColor: "rgba(255,99,132,1)",
+            pointBackgroundColor: "rgba(255,99,132,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(255,99,132,1)",
+            data: [78, 88, 70, 59, 46]
+          }
+        ]
+        };
+
+      var myRadarChart = new Chart(ctx, {
+          type: 'radar',
+          data: data,
+          options: {
+            responsive: true,
+            scale: {
+              reverse: false,
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          }
+      });
+    </script>
+  </body>
+</html>
+
+
